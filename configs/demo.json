@@ -1,0 +1,15 @@
+{
+  "n": 8,
+  "k": 4,
+  "sector_limit": 1,
+  "risk_aversion": 1.0,
+  "min_weight": 0.05,
+  "max_weight": 0.5,
+  "sector_weight_cap": 0.5,
+  "batches": 48,
+  "shots": 512,
+  "seed": 42,
+  "max_seconds": 180,
+  "extra_baselines": true,
+  "repair": false
+}

@@ -1,0 +1,10 @@
+{
+  "n": 8, "k": 4, "sector_limit": 1,
+  "batches": 48, "shots": 512, "seed": 42,
+  "quantum_configs": [
+    {"name": "x-p1", "depth": 1, "mixer": "x", "optimizer": "cobyla"},
+    {"name": "xy-p1", "depth": 1, "mixer": "xy", "optimizer": "cobyla"},
+    {"name": "x-p2", "depth": 2, "mixer": "x", "optimizer": "spsa"},
+    {"name": "xy-p2-cvar", "depth": 2, "mixer": "xy", "optimizer": "spsa", "alpha": 0.25}
+  ]
+}

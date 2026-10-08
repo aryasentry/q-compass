@@ -1,0 +1,31 @@
+[project]
+name = "qcompass"
+version = "0.1.0"
+description = "Reproducible NIFTY portfolio experiments with adaptive QAOA simulation"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "qiskit>=2.1,<3", "qiskit-aer>=0.17,<0.18", "qiskit-optimization>=0.7,<0.8",
+  "numpy>=2,<3", "pandas>=2.2,<3", "pyarrow>=18", "yfinance>=0.2.65",
+  "scipy>=1.14", "cvxpy>=1.6", "pyscipopt>=5.5", "scikit-learn>=1.6",
+  "streamlit>=1.45", "plotly>=6", "pydantic>=2.10", "httpx>=0.28",
+  "certifi", "fastapi>=0.116,<1", "filelock>=3", "tabulate>=0.9", "typer>=0.15",
+  "uvicorn>=0.35,<1"
+]
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.9", "pytest-timeout>=2"]
+[project.scripts]
+qcompass = "qcompass.cli:app"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[tool.hatch.build.targets.wheel]
+packages = ["src/qcompass"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["realdata: requires the locally downloaded authentic dataset", "slow: longer simulator integration"]
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
